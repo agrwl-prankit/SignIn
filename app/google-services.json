@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "869515277620",
+    "project_id": "info-98d5b",
+    "storage_bucket": "info-98d5b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:869515277620:android:cc7977ae14212c000fe161",
+        "android_client_info": {
+          "package_name": "com.prankit.info"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "869515277620-bkulq92vmkr60u7tsdal19se8rhu545u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.prankit.info",
+            "certificate_hash": "b9f55df8a80db06a2bf2ffa73554867e8622bf94"
+          }
+        },
+        {
+          "client_id": "869515277620-ni99i3lqbttl9m9kq7fjiah1219dpqo7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAYmgqu79dkOONM-2btoO0Y-FsmAvDJjs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "869515277620-ni99i3lqbttl9m9kq7fjiah1219dpqo7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
