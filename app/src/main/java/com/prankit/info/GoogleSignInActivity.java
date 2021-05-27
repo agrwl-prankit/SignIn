@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -51,6 +52,7 @@ public class GoogleSignInActivity extends AppCompatActivity {
         signInButton.setOnClickListener(v -> signIn());
         signOutBtn.setOnClickListener(v -> {
             mAuth.signOut();
+            Toast.makeText(this, "sign out", Toast.LENGTH_SHORT).show();
             signOutBtn.setVisibility(View.GONE);
         });
 
@@ -88,8 +90,7 @@ public class GoogleSignInActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Log.i("name result 2", ""+task.getResult().getCredential().toString());
-                            Log.i("name result 3", ""+task.getResult().getAdditionalUserInfo().getUsername());
-                            Log.i("name result 4", ""+task.getResult().getAdditionalUserInfo().getProfile().toString());
+                            Log.i("name result 3", ""+task.getResult().getAdditionalUserInfo().getProfile().toString());
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
@@ -113,14 +114,21 @@ public class GoogleSignInActivity extends AppCompatActivity {
             Log.i("name email", ""+account.getEmail());
             Log.i("name id", ""+account.getId());
         }
+        Toast.makeText(this, "sign in", Toast.LENGTH_SHORT).show();
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser != null) updateUI(currentUser);
+    public void onBackPressed() {
+        super.onBackPressed();
+        if (mAuth != null) mAuth.signOut();
+        finish();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (mAuth != null) mAuth.signOut();
+        finish();
     }
 
     /*
