@@ -24,4 +24,12 @@
         android:text="Go To Facebook Sign Activity"
         android:textAllCaps="false"/>
 
+    <Button
+        android:id="@+id/gotocontact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Go To Contact List Activity"
+        android:textAllCaps="false"/>
+
 </LinearLayout>

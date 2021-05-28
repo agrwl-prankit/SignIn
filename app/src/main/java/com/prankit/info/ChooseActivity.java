@@ -15,12 +15,14 @@ public class ChooseActivity extends AppCompatActivity {
 
         Button gotofb = findViewById(R.id.gotofb);
         Button gotogoogle = findViewById(R.id.gotogoogle);
+        Button gotoContact = findViewById(R.id.gotocontact);
 
 //        gotofb.setOnClickListener(v -> {
 //            startActivity(new Intent(this, ));
 //        });
 
         gotogoogle.setOnClickListener(v -> startActivity(new Intent(this, GoogleSignInActivity.class)));
+        gotoContact.setOnClickListener(v -> startActivity(new Intent(this, ContactListActivity.class)));
     }
 
     @Override
